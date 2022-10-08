@@ -1,0 +1,19 @@
+void f_searchid(char* id)
+{
+    int i = 1;
+    node* temp;
+    temp = top;
+    while (temp != NULL)
+    {
+        if (strstr(temp->info.faculity, id) != NULL) // if the string faculity exist in the element, then show all information of that element
+        {
+            printf("\n\nMember %d :", i++);
+            f_showdata(temp);
+        }
+        temp = temp->next;
+    }
+    if (i == 1)
+        printf("\n\t\t\t\tNo result for the ID you want\n");
+    else
+        printf("\n\n\t\t\t\t This is the end of searching !!!");
+}
